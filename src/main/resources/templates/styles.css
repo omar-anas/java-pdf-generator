@@ -1,0 +1,193 @@
+@page {
+    size: A4 landscape;
+    margin: 12mm 15mm;
+}
+
+body {
+    font-family: 'Noto Sans', 'Noto Naskh Arabic', sans-serif;
+    color: #00005b; /* Navy text branding */
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+.invoice-container {
+    width: 100%;
+}
+
+/* Header bar matching blueprint */
+.header-bar {
+    background-color: #000080;
+    color: #ffffff;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 10px 0;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+/* Structural Layout Tools */
+.layout-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.layout-table td {
+    border: none;
+    padding: 0;
+    vertical-align: top;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+/* Top metadata section grid */
+.top-section {
+    margin-bottom: 30px;
+}
+
+.nested-info-table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.nested-info-table td {
+    padding: 4px 0;
+}
+
+/* General Typography tokens */
+.field-label {
+    font-weight: bold;
+    color: #000080;
+    width: 110px;
+}
+
+.inline-lbl {
+    display: inline-block;
+}
+
+.field-value {
+    color: #333333;
+}
+
+/* Party Address Blocks */
+.party-section {
+    margin-bottom: 35px;
+}
+
+.party-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000080;
+    margin-bottom: 8px;
+}
+
+.address-block {
+    color: #222222;
+    line-height: 1.5;
+    min-height: 80px;
+}
+
+.contact-block {
+    margin-top: 15px;
+}
+
+.contact-block div {
+    margin-bottom: 3px;
+}
+
+/* Items Table Rendering Rules */
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.items-table thead th {
+    background-color: #ffffff;
+    color: #000080;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px 4px;
+    border-bottom: 2px solid #000080;
+}
+
+.items-table tbody td {
+    padding: 10px 4px;
+    color: #222222;
+    font-size: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+/* Summary Blocks */
+.summary-box {
+    width: 100%;
+    border-top: 2px solid #000080;
+    padding-top: 12px;
+    margin-top: 5px;
+}
+
+.summary-table {
+    border-collapse: collapse;
+}
+
+.summary-table td {
+    padding: 5px 0;
+}
+
+.summary-label {
+    font-weight: bold;
+    color: #000080;
+    width: 160px;
+}
+
+.summary-value {
+    color: #333333;
+}
+
+/* Absolute Page Footers */
+.footer {
+    position: fixed;
+    bottom: 0mm;
+    width: 100%;
+    font-size: 12px;
+    color: #000080;
+    border-top: 1px solid #ffffff; /* keeps spacing constraint safe */
+}
+
+.footer-left {
+    text-align: left;
+    width: 50%;
+}
+
+.footer-right {
+    text-align: right;
+    width: 50%;
+}
+
+/* --- Dynamic RTL Handling Extensions --- */
+html[dir="rtl"] body,
+body.rtl-mode {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .items-table thead th,
+html[dir="rtl"] .items-table tbody td {
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-left {
+    text-align: right;
+}
+
+html[dir="rtl"] .footer-right {
+    text-align: left;
+}

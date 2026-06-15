@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Commercial Invoice</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="invoice-container">
+
+    <div class="header-bar">
+        Commercial Invoice
+    </div>
+
+    <table class="layout-table top-section">
+        <tr>
+            <td class="col-6">
+                <table class="nested-info-table">
+                    <tr>
+                        <td class="field-label">Invoice No:</td>
+                        <td class="field-value" th:text="${invoiceNo}"></td>
+                    </tr>
+                    <tr>
+                        <td class="field-label">Invoice Date:</td>
+                        <td class="field-value" th:text="${invoiceDate}"></td>
+                    </tr>
+                </table>
+            </td>
+            <td class="col-6">
+                <table class="nested-info-table">
+                    <tr>
+                        <td class="field-label">Waybill No:</td>
+                        <td class="field-value" th:text="${waybillNo}"></td>
+                    </tr>
+                    <tr>
+                        <td class="field-label">VAT \ TAX ID:</td>
+                        <td class="field-value" th:text="${vatNumber}"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="layout-table party-section">
+        <tr>
+            <td class="col-6">
+                <div class="party-title">Sender :</div>
+                <div class="address-block">
+                    <div th:text="${senderName}"></div>
+                    <div th:text="${senderCompany}"></div>
+                    <div th:text="${senderAddress}"></div>
+                    <div th:text="${senderCity}"></div>
+                    <div th:text="${senderCountry}"></div>
+                </div>
+                <div class="contact-block">
+                    <div><span class="field-label inline-lbl">Telephone :</span> <span class="field-value" th:text="${senderPhone}"></span></div>
+                    <div><span class="field-label inline-lbl">Fax:</span> <span class="field-value" th:text="${senderFax}"></span></div>
+                </div>
+            </td>
+            <td class="col-6">
+                <div class="party-title">Receiver:</div>
+                <div class="address-block">
+                    <div th:text="${receiverName}"></div>
+                    <div th:text="${receiverCompany}"></div>
+                    <div th:text="${receiverAddress}"></div>
+                    <div th:text="${receiverCity}"></div>
+                    <div th:text="${receiverCountry}"></div>
+                </div>
+                <div class="contact-block">
+                    <div><span class="field-label inline-lbl">Telephone:</span> <span class="field-value" th:text="${receiverPhone}"></span></div>
+                    <div><span class="field-label inline-lbl">Fax:</span> <span class="field-value" th:text="${receiverFax}"></span></div>
+                    <div><span class="field-label inline-lbl">Contact Name:</span> <span class="field-value" th:text="${contactName}"></span></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="items-table">
+        <thead>
+        <tr>
+            <th style="width: 45%;">Description</th>
+            <th style="width: 10%;">Reference</th>
+            <th style="width: 10%;">HSCode</th>
+            <th style="width: 5%;">Qty</th>
+            <th style="width: 8%;">Unit</th>
+            <th style="width: 8%;">Price</th>
+            <th style="width: 8%;">Currency</th>
+            <th style="width: 10%;">Origin</th>
+            <th style="width: 8%;">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${description}"></td>
+            <td th:text="${reference}"></td>
+            <td th:text="${hsCode}"></td>
+            <td th:text="${qty}"></td>
+            <td th:text="${unit}"></td>
+            <td th:text="${price}"></td>
+            <td th:text="${currency}"></td>
+            <td th:text="${origin}"></td>
+            <td th:text="${total}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="summary-box">
+        <table class="summary-table">
+            <tr>
+                <td class="summary-label">Total Packages</td>
+                <td class="summary-value" th:text="${totalPackages}"></td>
+            </tr>
+            <tr>
+                <td class="summary-label">Total Value</td>
+                <td class="summary-value" th:text="${totalValue}"></td>
+            </tr>
+            <tr>
+                <td class="summary-label">Reason For Export</td>
+                <td class="summary-value" th:text="${exportReason}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <table class="layout-table">
+            <tr>
+                <td class="footer-left">
+                    Printed: <span th:text="${printedDate}"></span>
+                </td>
+                <td class="footer-right">
+                    1
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

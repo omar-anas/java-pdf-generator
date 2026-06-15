@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <title>فاتورة تجارية</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="rtl-mode">
+
+<div class="invoice-container">
+
+    <div class="header-bar">
+        فاتورة تجارية
+    </div>
+
+    <table class="layout-table top-section">
+        <tr>
+            <td class="col-6">
+                <table class="nested-info-table">
+                    <tr>
+                        <td class="field-value" th:text="${invoiceNo}"></td>
+                        <td class="field-label">رقم الفاتورة:</td>
+                    </tr>
+                    <tr>
+                        <td class="field-value" th:text="${invoiceDate}"></td>
+                        <td class="field-label">تاريخ الفاتورة:</td>
+                    </tr>
+                </table>
+            </td>
+            <td class="col-6">
+                <table class="nested-info-table">
+                    <tr>
+                        <td class="field-value" th:text="${waybillNo}"></td>
+                        <td class="field-label">رقم البوليصة:</td>
+
+                    </tr>
+                    <tr>
+                        <td class="field-value" th:text="${vatNumber}"></td>
+                        <td class="field-label">الرقم الضريبي:</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table class="layout-table party-section">
+        <tr>
+            <td class="col-6">
+                <div class="party-title">المرسل:</div>
+                <div class="address-block">
+                    <div th:text="${senderName}"></div>
+                    <div th:text="${senderCompany}"></div>
+                    <div th:text="${senderAddress}"></div>
+                    <div th:text="${senderCity}"></div>
+                    <div th:text="${senderCountry}"></div>
+                </div>
+                <div class="contact-block">
+                    <div><span class="field-label inline-lbl">الهاتف:</span> <span class="field-value" th:text="${senderPhone}"></span></div>
+                    <div><span class="field-label inline-lbl">الفاكس:</span> <span class="field-value" th:text="${senderFax}"></span></div>
+                </div>
+            </td>
+            <td class="col-6">
+                <div class="party-title">المستلم:</div>
+                <div class="address-block">
+                    <div th:text="${receiverName}"></div>
+                    <div th:text="${receiverCompany}"></div>
+                    <div th:text="${receiverAddress}"></div>
+                    <div th:text="${receiverCity}"></div>
+                    <div th:text="${receiverCountry}"></div>
+                </div>
+                <div class="contact-block">
+                    <div><span class="field-label inline-lbl">الهاتف:</span> <span class="field-value" th:text="${receiverPhone}"></span></div>
+                    <div><span class="field-label inline-lbl">الفاكس:</span> <span class="field-value" th:text="${receiverFax}"></span></div>
+                    <div><span class="field-label inline-lbl">اسم الشخص المسؤول:</span> <span class="field-value" th:text="${contactName}"></span></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="items-table">
+        <thead>
+        <tr>
+            <th style="width: 45%;">الوصف (Description)</th>
+            <th style="width: 10%;">المرجع</th>
+            <th style="width: 10%;">الرمز الجمركي</th>
+            <th style="width: 5%;">الكمية</th>
+            <th style="width: 8%;">الوحدة</th>
+            <th style="width: 8%;">السعر</th>
+            <th style="width: 8%;">العملة</th>
+            <th style="width: 10%;">بلد المنشأ</th>
+            <th style="width: 8%;">الإجمالي</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${description}"></td>
+            <td th:text="${reference}"></td>
+            <td th:text="${hsCode}"></td>
+            <td th:text="${qty}"></td>
+            <td th:text="${unit}"></td>
+            <td th:text="${price}"></td>
+            <td th:text="${currency}"></td>
+            <td th:text="${origin}"></td>
+            <td th:text="${total}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="summary-box">
+        <table class="summary-table">
+            <tr>
+                <td class="summary-value" th:text="${totalPackages}"></td>
+                <td class="summary-label">إجمالي عدد الطرود</td>
+
+            </tr>
+            <tr>
+                <td class="summary-value" th:text="${totalValue}"></td>
+                <td class="summary-label">القيمة الإجمالية</td>
+
+            </tr>
+            <tr>
+                <td class="summary-value" th:text="${exportReason}"></td>
+                <td class="summary-label">سبب التصدير</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <table class="layout-table">
+            <tr>
+                <td class="footer-right">
+                    ١
+                </td>
+                <td class="footer-left">
+                    تاريخ الطباعة: <span th:text="${printedDate}"></span>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
