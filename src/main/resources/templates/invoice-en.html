@@ -91,16 +91,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td th:text="${description}"></td>
-            <td th:text="${reference}"></td>
-            <td th:text="${hsCode}"></td>
-            <td th:text="${qty}"></td>
-            <td th:text="${unit}"></td>
-            <td th:text="${price}"></td>
-            <td th:text="${currency}"></td>
-            <td th:text="${origin}"></td>
-            <td th:text="${total}"></td>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.description}"></td>
+            <td th:text="${item.reference}"></td>
+            <td th:text="${item.hsCode}"></td>
+            <td th:text="${item.qty}"></td>
+            <td th:text="${item.unit}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.currency}"></td>
+            <td th:text="${item.origin}"></td>
+            <td th:text="${item.total}"></td>
         </tr>
         </tbody>
     </table>
@@ -123,13 +123,15 @@
     </div>
 
     <div class="footer">
-        <table class="layout-table">
+        <table class="footer-table">
             <tr>
                 <td class="footer-left">
-                    Printed: <span th:text="${printedDate}"></span>
+                    Printed Date:
+                    <span th:text="${printedDate}"></span>
                 </td>
+
                 <td class="footer-right">
-                    1
+                    Page 1 of 1
                 </td>
             </tr>
         </table>

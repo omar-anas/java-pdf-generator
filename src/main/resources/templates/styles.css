@@ -3,11 +3,15 @@
     margin: 12mm 15mm;
 }
 
+/* =========================================
+   BASE
+========================================= */
+
 body {
-    font-family: 'Noto Sans', 'Noto Naskh Arabic', sans-serif;
-    color: #00005b; /* Navy text branding */
+    font-family: "Noto Sans", "Noto Naskh Arabic", sans-serif;
     font-size: 13px;
     line-height: 1.4;
+    color: #00005b;
     margin: 0;
     padding: 0;
 }
@@ -16,7 +20,10 @@ body {
     width: 100%;
 }
 
-/* Header bar matching blueprint */
+/* =========================================
+   HEADER
+========================================= */
+
 .header-bar {
     background-color: #000080;
     color: #ffffff;
@@ -28,7 +35,10 @@ body {
     margin-bottom: 25px;
 }
 
-/* Structural Layout Tools */
+/* =========================================
+   COMMON TABLES
+========================================= */
+
 .layout-table {
     width: 100%;
     border-collapse: collapse;
@@ -45,13 +55,16 @@ body {
     width: 50%;
 }
 
-/* Top metadata section grid */
+/* =========================================
+   TOP SECTION
+========================================= */
+
 .top-section {
     margin-bottom: 30px;
 }
 
 .nested-info-table {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -59,22 +72,22 @@ body {
     padding: 4px 0;
 }
 
-/* General Typography tokens */
 .field-label {
     font-weight: bold;
     color: #000080;
-    width: 110px;
-}
-
-.inline-lbl {
-    display: inline-block;
+    width: 140px;
+    white-space: nowrap;
 }
 
 .field-value {
     color: #333333;
 }
 
-/* Party Address Blocks */
+.inline-lbl {
+    display: inline-block;
+    min-width: 120px;
+}
+
 .party-section {
     margin-bottom: 35px;
 }
@@ -83,13 +96,13 @@ body {
     font-size: 15px;
     font-weight: bold;
     color: #000080;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .address-block {
     color: #222222;
-    line-height: 1.5;
-    min-height: 80px;
+    line-height: 1.6;
+    min-height: 90px;
 }
 
 .contact-block {
@@ -97,10 +110,10 @@ body {
 }
 
 .contact-block div {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
-/* Items Table Rendering Rules */
+
 .items-table {
     width: 100%;
     border-collapse: collapse;
@@ -123,15 +136,24 @@ body {
     color: #222222;
     font-size: 12px;
     border-bottom: 1px solid #e0e0e0;
-    vertical-align: top;
+    vertical-align: middle;
+    height: 60px;
 }
 
-/* Summary Blocks */
+.items-table tbody tr:last-child td {
+    border-bottom: 2px solid #000080;
+}
+
+.items-table tr {
+    page-break-inside: avoid;
+}
+
 .summary-box {
     width: 100%;
     border-top: 2px solid #000080;
     padding-top: 12px;
-    margin-top: 5px;
+    margin-top: 10px;
+    page-break-inside: avoid;
 }
 
 .summary-table {
@@ -145,45 +167,108 @@ body {
 .summary-label {
     font-weight: bold;
     color: #000080;
-    width: 160px;
+    width: 180px;
 }
 
 .summary-value {
     color: #333333;
 }
 
-/* Absolute Page Footers */
+html[dir="ltr"] .summary-table {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+
+html[dir="rtl"] .summary-table {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+html[dir="rtl"] .summary-label,
+html[dir="rtl"] .summary-value {
+    text-align: right;
+}
+
+
 .footer {
-    position: fixed;
-    bottom: 0mm;
-    width: 100%;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 2px solid #000080;
     font-size: 12px;
     color: #000080;
-    border-top: 1px solid #ffffff; /* keeps spacing constraint safe */
+    page-break-inside: avoid;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.footer-table td {
+    width: 50%;
 }
 
 .footer-left {
     text-align: left;
-    width: 50%;
 }
 
 .footer-right {
     text-align: right;
-    width: 50%;
 }
 
-/* --- Dynamic RTL Handling Extensions --- */
+/* =========================================
+   RTL SUPPORT
+========================================= */
+
 html[dir="rtl"] body,
 body.rtl-mode {
     direction: rtl;
     text-align: right;
 }
 
+html[dir="rtl"] .layout-table {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nested-info-table {
+    direction: rtl;
+}
+
+html[dir="rtl"] .nested-info-table td {
+    text-align: right;
+}
+
+html[dir="rtl"] .field-label {
+    width: 140px;
+    white-space: nowrap;
+}
+
+html[dir="rtl"] .address-block,
+html[dir="rtl"] .contact-block {
+    text-align: right;
+}
+
+/* Fix top metadata alignment */
+html[dir="rtl"] .top-section .col-6:first-child,
+html[dir="rtl"] .party-section .col-6:first-child {
+    padding-right: 20px;
+    text-align: right;
+}
+
+html[dir="rtl"] .top-section .col-6:last-child,
+html[dir="rtl"] .party-section .col-6:last-child {
+    padding-left: 20px;
+    text-align: right;
+}
+
+/* RTL table headers */
 html[dir="rtl"] .items-table thead th,
 html[dir="rtl"] .items-table tbody td {
     text-align: right;
 }
 
+/* RTL footer */
 html[dir="rtl"] .footer-left {
     text-align: right;
 }
