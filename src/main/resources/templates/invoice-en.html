@@ -45,33 +45,85 @@
     <table class="layout-table party-section">
         <tr>
             <td class="col-6">
-                <div class="party-title">Sender :</div>
-                <div class="address-block">
-                    <div th:text="${senderName}"></div>
-                    <div th:text="${senderCompany}"></div>
-                    <div th:text="${senderAddress}"></div>
-                    <div th:text="${senderCity}"></div>
-                    <div th:text="${senderCountry}"></div>
-                </div>
+
+                <table class="party-info-table">
+
+                    <tr>
+                        <td class="party-label">
+                            Sender:
+                        </td>
+
+                        <td class="party-content">
+                            <div th:text="${senderName}"></div>
+                            <div th:text="${senderCompany}"></div>
+                            <div th:text="${senderAddress}"></div>
+                            <div th:text="${senderCity}"></div>
+                            <div th:text="${senderCountry}"></div>
+                        </td>
+                    </tr>
+
+                </table>
+
                 <div class="contact-block">
-                    <div><span class="field-label inline-lbl">Telephone :</span> <span class="field-value" th:text="${senderPhone}"></span></div>
-                    <div><span class="field-label inline-lbl">Fax:</span> <span class="field-value" th:text="${senderFax}"></span></div>
+
+                    <table class="nested-info-table">
+                        <tr>
+                            <td class="field-label">Telephone :</td>
+                            <td class="field-value" th:text="${senderPhone}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-label">Fax :</td>
+                            <td class="field-value" th:text="${senderFax}"></td>
+                        </tr>
+                    </table>
+
                 </div>
+
             </td>
             <td class="col-6">
-                <div class="party-title">Receiver:</div>
-                <div class="address-block">
-                    <div th:text="${receiverName}"></div>
-                    <div th:text="${receiverCompany}"></div>
-                    <div th:text="${receiverAddress}"></div>
-                    <div th:text="${receiverCity}"></div>
-                    <div th:text="${receiverCountry}"></div>
-                </div>
+
+                <table class="party-info-table">
+
+                    <tr>
+                        <td class="party-label">
+                            Receiver:
+                        </td>
+
+                        <td class="party-content">
+                            <div th:text="${receiverName}"></div>
+                            <div th:text="${receiverCompany}"></div>
+                            <div th:text="${receiverAddress}"></div>
+                            <div th:text="${receiverCity}"></div>
+                            <div th:text="${receiverCountry}"></div>
+                        </td>
+                    </tr>
+
+                </table>
+
                 <div class="contact-block">
-                    <div><span class="field-label inline-lbl">Telephone:</span> <span class="field-value" th:text="${receiverPhone}"></span></div>
-                    <div><span class="field-label inline-lbl">Fax:</span> <span class="field-value" th:text="${receiverFax}"></span></div>
-                    <div><span class="field-label inline-lbl">Contact Name:</span> <span class="field-value" th:text="${contactName}"></span></div>
+
+                    <table class="nested-info-table">
+
+                        <tr>
+                            <td class="field-label">Telephone :</td>
+                            <td class="field-value" th:text="${receiverPhone}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-label">Fax :</td>
+                            <td class="field-value" th:text="${receiverFax}"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-label">Contact Name :</td>
+                            <td class="field-value" th:text="${contactName}"></td>
+                        </tr>
+
+                    </table>
+
                 </div>
+
             </td>
         </tr>
     </table>
