@@ -68,18 +68,15 @@ body {
     border-collapse: collapse;
 }
 
-.nested-info-table td {
-    padding: 4px 0;
-}
-
 .field-label {
     font-weight: bold;
     color: #000080;
-    width: 90px;
+     width: 120px;
     white-space: nowrap;
 }
 
 .field-value {
+    width: auto;
     color: #333333;
 }
 
@@ -101,7 +98,7 @@ body {
 }
 
 .party-label {
-    width: 90px;
+    width: 120px;
     font-size: 15px;
     font-weight: bold;
     color: #000080;
@@ -226,6 +223,7 @@ html[dir="rtl"] .summary-value {
     text-align: right;
 }
 
+
 /* =========================================
    RTL SUPPORT
 ========================================= */
@@ -236,48 +234,111 @@ body.rtl-mode {
     text-align: right;
 }
 
-html[dir="rtl"] .layout-table {
-    direction: rtl;
-}
-
-html[dir="rtl"] .nested-info-table {
-    direction: rtl;
-}
-
-html[dir="rtl"] .nested-info-table td {
-    text-align: right;
-}
-
-html[dir="rtl"] .field-label {
+/* General RTL tables */
+html[dir="rtl"] .nested-info-table .field-label {
     width: 140px;
+    text-align: right;
     white-space: nowrap;
+    font-weight: bold;
 }
 
-html[dir="rtl"] .address-block,
+html[dir="rtl"] .nested-info-table .field-value {
+    width: auto;
+    text-align: right;
+}
+
+html[dir="rtl"] .layout-table,
+html[dir="rtl"] .nested-info-table,
+html[dir="rtl"] .party-info-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* =========================================
+   PARTY SECTION
+========================================= */
+
+html[dir="rtl"] .party-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+html[dir="rtl"] .party-label {
+    width: 130px;
+    vertical-align: top;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000080;
+    padding-left: 10px;
+}
+
+html[dir="rtl"] .party-content {
+    vertical-align: top;
+    text-align: right;
+    line-height: 1.6;
+    color: #222222;
+}
+
+html[dir="rtl"] .party-content div {
+    margin: 0;
+}
+
+/* =========================================
+   CONTACT TABLE
+========================================= */
+
 html[dir="rtl"] .contact-block {
-    text-align: right;
+    margin-top: 15px;
 }
 
-/* Fix top metadata alignment */
-html[dir="rtl"] .top-section .col-6:first-child,
-html[dir="rtl"] .party-section .col-6:first-child {
-    padding-right: 20px;
-    text-align: right;
+html[dir="rtl"] .contact-block .nested-info-table {
+    width: 100%;
+    table-layout: fixed;
 }
 
-html[dir="rtl"] .top-section .col-6:last-child,
-html[dir="rtl"] .party-section .col-6:last-child {
-    padding-left: 20px;
+html[dir="rtl"] .contact-block .field-label {
+    width: 140px;
     text-align: right;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #000080;
 }
 
-/* RTL table headers */
+html[dir="rtl"] .contact-block .field-value {
+    text-align: right;
+    width: auto;
+    color: #333333;
+}
+/* -----------------------------------------
+   ITEMS TABLE
+----------------------------------------- */
+
 html[dir="rtl"] .items-table thead th,
 html[dir="rtl"] .items-table tbody td {
     text-align: right;
 }
 
-/* RTL footer */
+/* -----------------------------------------
+   SUMMARY
+----------------------------------------- */
+
+html[dir="rtl"] .summary-table {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+html[dir="rtl"] .summary-label,
+html[dir="rtl"] .summary-value {
+    text-align: right;
+}
+
+/* -----------------------------------------
+   FOOTER
+----------------------------------------- */
+
 html[dir="rtl"] .footer-left {
     text-align: right;
 }

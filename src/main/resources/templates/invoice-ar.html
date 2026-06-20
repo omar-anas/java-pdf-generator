@@ -46,37 +46,90 @@
 
     <table class="layout-table party-section">
         <tr>
-            <!-- RIGHT side in RTL (first td) → Receiver -->
+
+            <!-- Receiver -->
             <td class="col-6">
-                <div class="party-title">المستلم:</div>
-                <div class="address-block">
-                    <div th:text="${receiverName}"></div>
-                    <div th:text="${receiverCompany}"></div>
-                    <div th:text="${receiverAddress}"></div>
-                    <div th:text="${receiverCity}"></div>
-                    <div th:text="${receiverCountry}"></div>
-                </div>
+
+                <table class="party-info-table rtl-party-table">
+                    <tr>
+                        <td class="party-content">
+                            <div th:text="${receiverName}"></div>
+                            <div th:text="${receiverCompany}"></div>
+                            <div th:text="${receiverAddress}"></div>
+                            <div th:text="${receiverCity}"></div>
+                            <div th:text="${receiverCountry}"></div>
+                        </td>
+
+                        <td class="party-label">
+                            المستلم:
+                        </td>
+                    </tr>
+                </table>
+
                 <div class="contact-block">
-                    <div><span class="field-label inline-lbl">الهاتف:</span> <span class="field-value" th:text="${receiverPhone}"></span></div>
-                    <div><span class="field-label inline-lbl">الفاكس:</span> <span class="field-value" th:text="${receiverFax}"></span></div>
-                    <div><span class="field-label inline-lbl">اسم الشخص المسؤول:</span> <span class="field-value" th:text="${contactName}"></span></div>
+
+                    <table class="nested-info-table rtl-contact-table">
+
+                        <tr>
+                            <td class="field-value" th:text="${receiverPhone}"></td>
+                            <td class="field-label">الهاتف:</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-value" th:text="${receiverFax}"></td>
+                            <td class="field-label">الفاكس:</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-value" th:text="${contactName}"></td>
+                            <td class="field-label">اسم الشخص المسؤول:</td>
+                        </tr>
+
+                    </table>
+
                 </div>
+
             </td>
-            <!-- LEFT side in RTL (second td) → Sender -->
+
+            <!-- Sender -->
             <td class="col-6">
-                <div class="party-title">المرسل:</div>
-                <div class="address-block">
-                    <div th:text="${senderName}"></div>
-                    <div th:text="${senderCompany}"></div>
-                    <div th:text="${senderAddress}"></div>
-                    <div th:text="${senderCity}"></div>
-                    <div th:text="${senderCountry}"></div>
-                </div>
+
+                <table class="party-info-table rtl-party-table">
+                    <tr>
+                        <td class="party-content">
+                            <div th:text="${senderName}"></div>
+                            <div th:text="${senderCompany}"></div>
+                            <div th:text="${senderAddress}"></div>
+                            <div th:text="${senderCity}"></div>
+                            <div th:text="${senderCountry}"></div>
+                        </td>
+
+                        <td class="party-label">
+                            المرسل:
+                        </td>
+                    </tr>
+                </table>
+
                 <div class="contact-block">
-                    <div><span class="field-label inline-lbl">الهاتف:</span> <span class="field-value" th:text="${senderPhone}"></span></div>
-                    <div><span class="field-label inline-lbl">الفاكس:</span> <span class="field-value" th:text="${senderFax}"></span></div>
+
+                    <table class="nested-info-table rtl-contact-table">
+
+                        <tr>
+                            <td class="field-value" th:text="${senderPhone}"></td>
+                            <td class="field-label">الهاتف:</td>
+                        </tr>
+
+                        <tr>
+                            <td class="field-value" th:text="${senderFax}"></td>
+                            <td class="field-label">الفاكس:</td>
+                        </tr>
+
+                    </table>
+
                 </div>
+
             </td>
+
         </tr>
     </table>
 
